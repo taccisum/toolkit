@@ -6,7 +6,14 @@
 
     <groupId>com.cheegu.framework</groupId>
     <artifactId>toolkit</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>toolkit-core</module>
+        <module>toolkit-bean-converter</module>
+        <module>toolkit-strategy-factories</module>
+        <module>toolkit-all</module>
+    </modules>
 
     <name>Toolkit</name>
 
