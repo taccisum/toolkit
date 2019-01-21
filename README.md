@@ -32,13 +32,14 @@ public class String2IntegerConverter extends ConverterSkeleton<String, Integer> 
 }
 ```
 
-然后即可以通过ConverterUtils在您的代码中调用这个转换器
+然后即可以通过`ConverterUtils`提供的相关方法就可以调用转换器
 
 ```java
 public void foo() {
     int val = ConverterUtils.convert("123", Integer.class);
 }
 ```
+您只需要告知ConverterUtils您要转换成的目标类型即可，ConverterUtils会自动根据源类型和目标类型查找到合适的转换器
 
 你也可以使用`import static`让你的代码看起来更优雅
 
