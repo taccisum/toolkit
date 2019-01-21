@@ -40,7 +40,12 @@
             <dependency>
                 <groupId>com.cheegu.framework</groupId>
                 <artifactId>toolkit-bean-converter</artifactId>
-                <version>1.0-SNAPSHOT</version>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cheegu.framework</groupId>
+                <artifactId>toolkit-spring</artifactId>
+                <version>${project.version}</version>
             </dependency>
 
             <dependency>
