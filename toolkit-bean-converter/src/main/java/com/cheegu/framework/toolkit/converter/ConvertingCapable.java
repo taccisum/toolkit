@@ -1,40 +1,31 @@
 package com.cheegu.framework.toolkit.converter;
 
-import java.util.ArrayList;
+import com.cheegu.framework.toolkit.converter.util.ConverterUtils;
+
 import java.util.List;
 
 /**
- * TODO:: replace code with ConverterUtils
- *
  * @author tac - liaojf@cheegu.com
  * @since 2019/1/21
  */
 public abstract class ConvertingCapable {
     protected <FROM, TO> TO convert(FROM from, Class<? extends FROM> fromClazz, Class<TO> toClazz) {
-        return (TO) getConverter(fromClazz, toClazz).convert(from);
+        return ConverterUtils.convert(from, fromClazz, toClazz);
     }
 
     protected <FROM, TO> TO convert(FROM from, Class<TO> toClazz) {
-        return convert(from, from.getClass(), toClazz);
+        return ConverterUtils.convert(from, toClazz);
     }
 
     protected <FROM, TO> TO convert(FROM from, TO to) {
-        return (TO) convert(from, to.getClass());
+        return (TO) ConverterUtils.convert(from, to.getClass());
     }
 
     protected <FROM, TO> TO convert(FROM from, Class<? extends FROM> fromClazz, TO to) {
-        return (TO) convert(from, fromClazz, to.getClass());
+        return (TO) ConverterUtils.convert(from, fromClazz, to.getClass());
     }
 
     protected <FROM, TO> List<TO> convertAll(List<FROM> fromList, Class<TO> toCls) {
-        if (fromList == null || fromList.size() == 0) {
-            return new ArrayList<>();
-        }
-
-        return getConverter(fromList.get(0).getClass(), toCls).convertAll(fromList);
-    }
-
-    protected Converter getConverter(Class fromCls, Class toCls) {
-        return ConverterFactory.find(fromCls, toCls);
+        return ConverterUtils.convertAll(fromList, toCls);
     }
 }
