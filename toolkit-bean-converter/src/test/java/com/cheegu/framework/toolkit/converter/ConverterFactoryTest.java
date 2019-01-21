@@ -43,9 +43,9 @@ public class ConverterFactoryTest {
         ConverterFactory.find(A.class, B.class);
     }
 
-    class A2BConverter extends GenericSingleConverterSupportByGuava<A, B> {
+    class A2BConverter extends ConverterSkeleton<A, B> {
         @Override
-        protected B doForward(A a) {
+        protected B doConvert(A a) {
             B b = new B();
             return b;
         }
