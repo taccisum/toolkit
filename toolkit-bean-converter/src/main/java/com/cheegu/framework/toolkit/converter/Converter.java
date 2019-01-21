@@ -6,8 +6,8 @@ import java.util.List;
  * @author tac - liaojf@cheegu.com
  * @since 2019/1/21
  */
-public interface Converter<FROM, TO> {
-    TO convert(FROM from);
+public interface Converter<S, T> {
+    T convert(S source);
 
-    List<TO> convertAll(List<FROM> from);
+    List<T> convertAll(List<S> source);
 }

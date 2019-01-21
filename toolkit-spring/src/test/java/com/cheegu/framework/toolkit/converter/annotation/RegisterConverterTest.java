@@ -12,12 +12,12 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * 注解{@link Register2Factory}使用示例
+ * 注解{@link RegisterConverter}使用示例
  *
  * @author tac - liaojf@cheegu.com
  * @since 2019/1/21
  */
-public class Register2FactoryTest {
+public class RegisterConverterTest {
     @After
     public void tearDown() throws Exception {
         ConverterFactory.clean();
@@ -27,7 +27,7 @@ public class Register2FactoryTest {
     public void sample() {
         for (Converter converter : scanConverter()) {
             if (ConverterFactoryUtils.isConverterCandidate(converter)) {
-                Register2Factory annotation = ConverterFactoryUtils.getRegisterAnnotation(converter);
+                RegisterConverter annotation = ConverterFactoryUtils.getRegisterAnnotation(converter);
                 ConverterFactory.register(converter, annotation.from(), annotation.to());
             }
         }
@@ -39,7 +39,7 @@ public class Register2FactoryTest {
         return new Converter[]{new FooConverter(), new FooConverter1()};
     }
 
-    @Register2Factory(from = String.class, to = Integer.class)
+    @RegisterConverter(from = String.class, to = Integer.class)
     class FooConverter implements Converter<String, Integer> {
         @Override
         public Integer convert(String s) {
@@ -52,7 +52,7 @@ public class Register2FactoryTest {
         }
     }
 
-    @Register2Factory(from = String.class, to = Boolean.class)
+    @RegisterConverter(from = String.class, to = Boolean.class)
     class FooConverter1 implements Converter<String, Boolean> {
         @Override
         public Boolean convert(String s) {

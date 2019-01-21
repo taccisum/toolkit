@@ -2,24 +2,22 @@ package com.cheegu.framework.toolkit.converter.util;
 
 
 import com.cheegu.framework.toolkit.converter.Converter;
-import com.cheegu.framework.toolkit.converter.annotation.Register2Factory;
+import com.cheegu.framework.toolkit.converter.annotation.RegisterConverter;
+import org.springframework.core.annotation.AnnotationUtils;
 
 /**
- * TODO:: move to spring starter
- *
  * @author tac - liaojf@cheegu.com
  * @since 2019/1/21
  */
 public abstract class ConverterFactoryUtils {
     public static boolean isConverterCandidate(Object obj) {
         if (obj != null && obj instanceof Converter) {
-            Register2Factory annotation = getRegisterAnnotation(obj);
-            return annotation != null && annotation.register();
+            return true;
         }
         return false;
     }
 
-    public static Register2Factory getRegisterAnnotation(Object obj) {
-        return obj.getClass().getAnnotation(Register2Factory.class);
+    public static RegisterConverter getRegisterAnnotation(Object obj) {
+        return AnnotationUtils.findAnnotation(obj.getClass(), RegisterConverter.class);
     }
 }

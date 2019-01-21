@@ -1,7 +1,7 @@
 package com.cheegu.framework.toolkit.converter.util;
 
 import com.cheegu.framework.toolkit.converter.Converter;
-import com.cheegu.framework.toolkit.converter.annotation.Register2Factory;
+import com.cheegu.framework.toolkit.converter.annotation.RegisterConverter;
 import org.junit.Test;
 
 import java.util.List;
@@ -16,8 +16,6 @@ public class ConverterFactoryUtilsTest {
     @Test
     public void isConverterCandidate() throws Exception {
         assertThat(ConverterFactoryUtils.isConverterCandidate(new FooConverter())).isTrue();
-        assertThat(ConverterFactoryUtils.isConverterCandidate(new FooConverterNotRegister())).isFalse();
-        assertThat(ConverterFactoryUtils.isConverterCandidate(new FooConverterNotRegister1())).isFalse();
         assertThat(ConverterFactoryUtils.isConverterCandidate(new FooConverterNotInheritFromConverter())).isFalse();
     }
 
@@ -33,18 +31,11 @@ public class ConverterFactoryUtilsTest {
         }
     }
 
-    @Register2Factory(from = Object.class, to = Object.class)
+    @RegisterConverter(from = Object.class, to = Object.class)
     class FooConverter extends AbstractFooConverter {
     }
 
-    @Register2Factory(register = false, from = Object.class, to = Object.class)
-    class FooConverterNotRegister extends AbstractFooConverter {
-    }
-
-    class FooConverterNotRegister1 extends AbstractFooConverter {
-    }
-
-    @Register2Factory(from = Object.class, to = Object.class)
+    @RegisterConverter(from = Object.class, to = Object.class)
     class FooConverterNotInheritFromConverter {
     }
 }

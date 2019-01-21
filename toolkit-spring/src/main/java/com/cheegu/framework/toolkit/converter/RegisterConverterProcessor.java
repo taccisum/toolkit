@@ -1,7 +1,9 @@
 package com.cheegu.framework.toolkit.converter;
 
-import com.cheegu.framework.toolkit.converter.annotation.Register2Factory;
+import com.cheegu.framework.toolkit.converter.annotation.RegisterConverter;
 import com.cheegu.framework.toolkit.converter.util.ConverterFactoryUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 
@@ -10,6 +12,8 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
  * @since 2019/1/21
  */
 public class RegisterConverterProcessor implements BeanPostProcessor {
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         return bean;
@@ -18,8 +22,23 @@ public class RegisterConverterProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (ConverterFactoryUtils.isConverterCandidate(bean)) {
-            Register2Factory annotation = ConverterFactoryUtils.getRegisterAnnotation(bean);
-            ConverterFactory.register((Converter) bean, annotation.from(), annotation.to());
+            RegisterConverter annotation = ConverterFactoryUtils.getRegisterAnnotation(bean);
+
+            Class sourceType = null;
+            Class targetType = null;
+
+            if (annotation != null && annotation.register()) {
+                sourceType = annotation.from();
+                targetType = annotation.to();
+            } else if (bean instanceof BeansTypeAware) {
+                sourceType = ((BeansTypeAware) bean).getSourceType();
+                targetType = ((BeansTypeAware) bean).getTargetType();
+            }
+            if (sourceType != null && targetType != null) {
+                ConverterFactory.register((Converter) bean, sourceType, targetType);
+            } else {
+                logger.warn("failure to register converter [{}]. can not get source type or target type.", bean.getClass());
+            }
         }
         return bean;
     }
