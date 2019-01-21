@@ -1,6 +1,8 @@
 # Toolkit
 
-toolkit提供各种方便开发的java小工具，例如bean转换器，通用策略工厂等。同时提供与spring boot快速集成的starter，让您的应用开发更轻松。
+`toolkit`提供各种方便开发的java小工具，例如`bean转换器`，`通用策略工厂`等。
+
+`toolkit`还提供与spring boot进行快速集成的starter。
 
 ## How To
 
@@ -52,7 +54,7 @@ public void foo() {
 
 > 暂无
 
-## 配置一览
+## Configurations
 
 > 暂无
 
