@@ -8,8 +8,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
- * @author tac
- * @since 2.0
+ * @author tac - liaojf@cheegu.com
+ * @since 2019/1/21
  */
 public class GenericSingleConverterSupportByGuavaTest {
 

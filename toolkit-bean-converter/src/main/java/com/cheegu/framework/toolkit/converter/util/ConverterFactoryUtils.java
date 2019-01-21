@@ -6,8 +6,8 @@ import com.cheegu.framework.toolkit.converter.Converter;
 /**
  * TODO:: move to spring starter
  *
- * @author tac
- * @since 2.0
+ * @author tac - liaojf@cheegu.com
+ * @since 2019/1/21
  */
 public abstract class ConverterFactoryUtils {
 //    public static boolean isConverterCandidate(Object obj) {

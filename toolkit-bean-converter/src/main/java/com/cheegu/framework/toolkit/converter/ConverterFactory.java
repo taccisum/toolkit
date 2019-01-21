@@ -9,8 +9,8 @@ import java.util.Map;
 import java.util.Objects;
 
 /**
- * @author tac
- * @since 1.0
+ * @author tac - liaojf@cheegu.com
+ * @since 2019/1/21
  */
 public abstract class ConverterFactory {
     private static Logger logger = LoggerFactory.getLogger(ConverterFactory.class);

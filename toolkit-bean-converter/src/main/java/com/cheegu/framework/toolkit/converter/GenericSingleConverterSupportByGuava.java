@@ -6,8 +6,8 @@ import java.util.List;
 /**
  * 基于Guava Converter的单向Converter support
  *
- * @author tac
- * @since 2.0
+ * @author tac - liaojf@cheegu.com
+ * @since 2019/1/21
  */
 public abstract class GenericSingleConverterSupportByGuava<FROM, TO> extends com.google.common.base.Converter<FROM, TO>
         implements Converter<FROM, TO> {

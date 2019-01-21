@@ -3,8 +3,8 @@ package com.cheegu.framework.toolkit.converter;
 import java.util.List;
 
 /**
- * @author tac
- * @since 1.0
+ * @author tac - liaojf@cheegu.com
+ * @since 2019/1/21
  */
 public interface Converter<FROM, TO> {
     TO convert(FROM from);

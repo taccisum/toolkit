@@ -11,8 +11,8 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.*;
 
 /**
- * @author tac
- * @since 2.0
+ * @author tac - liaojf@cheegu.com
+ * @since 2019/1/21
  */
 public class ConvertingCapableTest {
     private FooService fooService;

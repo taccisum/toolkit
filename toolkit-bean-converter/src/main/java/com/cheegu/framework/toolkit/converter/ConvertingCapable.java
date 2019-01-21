@@ -6,8 +6,8 @@ import java.util.List;
 /**
  * TODO:: replace code with ConverterUtils
  *
- * @author tac
- * @since 2.0
+ * @author tac - liaojf@cheegu.com
+ * @since 2019/1/21
  */
 public abstract class ConvertingCapable {
     protected <FROM, TO> TO convert(FROM from, Class<? extends FROM> fromClazz, Class<TO> toClazz) {
