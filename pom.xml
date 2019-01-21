@@ -34,7 +34,6 @@
         </developer>
     </developers>
 
-
     <dependencyManagement>
         <dependencies>
             <dependency>

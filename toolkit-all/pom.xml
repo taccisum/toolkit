@@ -13,4 +13,11 @@
 
     <name>Toolkit All</name>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.cheegu.framework</groupId>
+            <artifactId>toolkit-bean-converter</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
