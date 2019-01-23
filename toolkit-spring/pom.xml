@@ -15,16 +15,13 @@
 
     <dependencies>
         <dependency>
+            <groupId>com.cheegu.framework</groupId>
+            <artifactId>toolkit-all</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.cheegu.framework</groupId>
-            <artifactId>toolkit-bean-converter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.cheegu.framework</groupId>
-            <artifactId>toolkit-strategy-factories</artifactId>
         </dependency>
 
         <dependency>

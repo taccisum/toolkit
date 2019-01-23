@@ -18,6 +18,10 @@
             <groupId>com.cheegu.framework</groupId>
             <artifactId>toolkit-bean-converter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.cheegu.framework</groupId>
+            <artifactId>toolkit-strategy-factories</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

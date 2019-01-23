@@ -43,12 +43,17 @@
             </dependency>
             <dependency>
                 <groupId>com.cheegu.framework</groupId>
+                <artifactId>toolkit-strategy-factories</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.cheegu.framework</groupId>
                 <artifactId>toolkit-spring</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.cheegu.framework</groupId>
-                <artifactId>toolkit-strategy-factories</artifactId>
+                <artifactId>toolkit-all</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
