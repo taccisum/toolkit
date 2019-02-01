@@ -51,14 +51,6 @@ public void foo() {
 }
 ```
 
-### Advanced
-
-> 暂无
-
-### Configurations
-
-> 暂无
-
 ## Strategy Factories
 
 `Strategy Factories`是通用策略工厂，目的是为j2ee编写中较常使用到的策略模式提供通用的解决方案。
