@@ -4,7 +4,7 @@
 
 `toolkit`还提供与spring boot进行快速集成的starter。
 
-## How To
+## Getting Started
 
 依赖starter即可，目前仅支持spring boot2快速集成。
 
@@ -16,7 +16,7 @@
 </dependency>
 ```
 
-### Bean Converter
+## Bean Converter
 
 `Bean Converter`用于抽离您应用中的各种bean之间互相转换的代码，使你的代码看起更优雅。
 
@@ -55,7 +55,7 @@ public void foo() {
 
 > 暂无
 
-## Configurations
+### Configurations
 
 > 暂无
 
